@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is my web page for Book Library.">
+    <meta name="keywords" content="web page, HTML, CSS, JavaScript">
+    <meta name="author" content="ak amit">
+
+    <title>LibraConnect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+        integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+        integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        body {
+            padding: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ui container">
+        <div class="ui blue massive menu">
+            <a class="header item">LibraConnect</a>
+            <div class="right menu">
+                <a class="active item">Home</a>
+                <a class="item">About</a>
+                <a class="item">Contact</a>
+            </div>
+        </div>
+        <div class="ui center aligned segment">
+            <div class="ui statistic">
+                <div class="label">
+                    Book Count
+                </div>
+                <div class="value" id="totalBooksCount">
+                    40,509
+                </div>
+            </div>
+        </div>
+
+        <table id="booksTable" class="ui blue compact celled definition table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>File</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div class="ui segment">
+            <form id="addBookForm" class="ui form" enctype="multipart/form-data">
+                <div class="three fields">
+                    <div class="four wide field">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" placeholder="enter title of the book" required>
+                    </div>
+                    <div class="four wide field">
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" placeholder="enter author name" required>
+                    </div>
+                    <div class="four wide field">
+                        <label for="file">File:</label>
+                        <input type="file" id="file" name="file" accept=".pdf" required>
+                    </div>
+                </div>
+                <button class="ui submit button" type="submit">Add Book</button>
+            </form>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui divider"></div>
+        <footer>author&copy; Amit</footer>
+    </div>
+
+    <script src="LibraConnect.js"></script>
+
+</body>
+
+</html>
