@@ -1,6 +1,8 @@
 const form = document.getElementById('addBookForm');
 const tableBody = document.querySelector('#booksTable tbody');
 const totalBooksCountElement = document.getElementById('totalBooksCount');
+let categoryContent = []
+
 
 function fetchBooks() {
     fetch('http://127.0.0.1:5000/api/books')
@@ -9,6 +11,8 @@ function fetchBooks() {
             tableBody.innerHTML = '';
             let countBook = 1;
             books.forEach(book => {
+                categoryContent.push({title: book.title });
+
                 const row = document.createElement('tr');
                 row.innerHTML = `
                         <td>${countBook++}</td>
@@ -25,6 +29,11 @@ function fetchBooks() {
             });
 
             totalBooksCountElement.textContent = books.length;
+            $('.ui.search')
+                .search({
+                    source: categoryContent
+                })
+                ;
         });
 }
 

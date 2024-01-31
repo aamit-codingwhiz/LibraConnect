@@ -39,6 +39,13 @@
                 <a class="item">Contact</a>
             </div>
         </div>
+        <div class="ui search">
+            <div class="ui fluid icon input">
+                <input class="prompt" type="text" placeholder="Search books...">
+                <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+        </div>
         <div class="ui center aligned segment">
             <div class="ui statistic">
                 <div class="label">
@@ -64,7 +71,7 @@
         </table>
 
         <div class="ui segment">
-            <form id="addBookForm" class="ui form" enctype="multipart/form-data">
+            <form id="addBookForm" class="ui form" enctype="multipart/form-data" method="post">
                 <div class="three fields">
                     <div class="four wide field">
                         <label for="title">Title:</label>
